@@ -1,138 +1,418 @@
-YouTube Downloader - README
-📥 YouTube Video Downloader
-A Python-based YouTube downloader that allows you to download videos in MP4 format or extract audio as MP3 files using yt-dlp.
+# 🎬 YouTube Downloader
 
-✨ Features
-Download Videos: Save YouTube videos in MP4 format
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.6%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/yt--dlp-Powered-red?style=for-the-badge" alt="yt-dlp">
+  <img src="https://img.shields.io/badge/FFmpeg-Required-007808?style=for-the-badge&logo=ffmpeg&logoColor=white" alt="FFmpeg">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
+</p>
 
-Extract Audio: Convert YouTube videos to MP3 audio files
+<p align="center">
+  <b>⚡ A simple, fast & powerful YouTube downloader built with Python.</b>
+  <br>
+  Download videos in high-quality MP4 or extract audio as MP3 with ease.
+</p>
 
-Simple Interface: Easy-to-use command-line menu system
+<p align="center">
+  🎥 Video &nbsp; • &nbsp; 🎵 Audio &nbsp; • &nbsp; ⚡ Fast &nbsp; • &nbsp; 🐍 Python
+</p>
 
-High Quality: Downloads best available video and audio quality
+---
 
-Auto-merging: Automatically merges video and audio streams (MP4 option)
+## ✨ Features
 
-🚀 Installation
-Prerequisites
-Python 3.6 or higher
+| Feature               | Description                                                  |
+| --------------------- | ------------------------------------------------------------ |
+| 🎥 **MP4 Download**   | Download YouTube videos with the best available quality      |
+| 🎵 **MP3 Extraction** | Extract audio and save it as a high-quality MP3              |
+| ⚡ **Best Quality**    | Automatically selects the best available video/audio streams |
+| 🔀 **Auto Merge**     | Automatically merges video and audio using FFmpeg            |
+| 🖥️ **Simple CLI**    | Clean and beginner-friendly command-line interface           |
+| 📁 **Auto Naming**    | Files are automatically saved using the video title          |
+| 🛠️ **Easy Setup**    | Minimal dependencies and straightforward installation        |
 
-pip (Python package installer)
+---
 
-FFmpeg (required for audio extraction and merging)
+## 🖼️ How It Works
 
-Step 1: Install FFmpeg
-Windows:
+```text
+       ┌──────────────────────┐
+       │   🔗 YouTube URL     │
+       └──────────┬───────────┘
+                  │
+                  ▼
+       ┌──────────────────────┐
+       │   📋 Select Format   │
+       └──────────┬───────────┘
+                  │
+          ┌───────┴───────┐
+          ▼               ▼
+     ┌─────────┐      ┌─────────┐
+     │ 🎥 MP4  │      │ 🎵 MP3  │
+     └────┬────┘      └────┬────┘
+          │                │
+          ▼                ▼
+     ┌─────────────────────────┐
+     │       ⚡ yt-dlp         │
+     │       🔧 FFmpeg         │
+     └────────────┬────────────┘
+                  │
+                  ▼
+          📁 Downloaded File
+```
 
-Download from FFmpeg.org
+---
 
-Add the bin folder to your system PATH
+## 🚀 Installation
 
-macOS:
+### 📋 Prerequisites
 
-bash
+Before starting, make sure you have:
+
+* 🐍 **Python 3.6 or higher**
+* 📦 **pip**
+* 🔧 **FFmpeg**
+* 🌐 A working internet connection
+
+---
+
+### 1️⃣ Install FFmpeg
+
+FFmpeg is required for:
+
+* 🔀 Merging video + audio
+* 🎵 Extracting MP3 audio
+* 🎚️ Media conversion
+
+#### 🪟 Windows
+
+Download FFmpeg from the official website and add its `bin` directory to your system `PATH`.
+
+#### 🍎 macOS
+
+```bash
 brew install ffmpeg
-Linux (Ubuntu/Debian):
+```
 
-bash
+#### 🐧 Ubuntu / Debian
+
+```bash
 sudo apt update
 sudo apt install ffmpeg
-Step 2: Install yt-dlp
-bash
+```
+
+Verify the installation:
+
+```bash
+ffmpeg -version
+```
+
+---
+
+### 2️⃣ Install yt-dlp
+
+Install the required Python package:
+
+```bash
 pip install yt-dlp
-📦 Usage
-Run the script:
+```
 
-bash
+To update yt-dlp later:
+
+```bash
+pip install --upgrade yt-dlp
+```
+
+---
+
+## 📥 Usage
+
+Clone or download this project and run:
+
+```bash
 python youtube_downloader.py
-Enter your YouTube URL when prompted
+```
 
-Choose your download format:
+You'll see a simple menu:
 
-Enter 1 for MP4 (Video + Audio)
+```text
+╔════════════════════════════════════╗
+║      🎬 YOUTUBE DOWNLOADER         ║
+╚════════════════════════════════════╝
 
-Enter 2 for MP3 (Audio only)
-
-The file will be downloaded to your current directory
-
-Type exit, clear, stop, or ok to quit the program
-
-🎯 Example
-text
 Enter Your URL > https://www.youtube.com/watch?v=xxxxxxxxxxx
 
 Choose Download Format:
 
-1. MP4
-2. MP3
+1. 🎥 MP4
+2. 🎵 MP3
 
 Enter your choice > 1
+```
 
-DOWNLOAD COMPLETED
-📁 Output Files
-MP4 files: Saved as [video_title].mp4
+Once the download is complete:
 
-MP3 files: Saved as [video_title].mp3
+```text
+╔════════════════════════════════════╗
+║       ✅ DOWNLOAD COMPLETED        ║
+╚════════════════════════════════════╝
+```
 
-⚙️ Configuration Options
-The script includes the following configuration:
+🎉 Your file will be saved in the current working directory.
 
-MP4 Download
-Downloads best available video and audio streams
+---
 
-Merges them into a single MP4 file
+## 🎥 Download MP4
 
-MP3 Extraction
-Extracts audio in MP3 format
+Select:
 
-Quality set to 192kbps for good sound quality
+```text
+1. MP4
+```
 
-⚠️ Limitations
-Some YouTube videos may have region restrictions
+The downloader will:
 
-Very long videos may take time to process
+1. 🔎 Find the best available video stream
+2. 🔊 Find the best available audio stream
+3. 📥 Download both streams
+4. 🔀 Merge them using FFmpeg
+5. 💾 Save the final file as `.mp4`
 
-Internet connection required
+Example:
 
-🔧 Troubleshooting
-"FFmpeg not found" error
-Ensure FFmpeg is properly installed
+```text
+📁 My Awesome Video.mp4
+```
 
-Check if FFmpeg is in your system PATH
+---
 
-Download fails
-Check your internet connection
+## 🎵 Extract MP3
 
-Ensure the YouTube URL is valid
+Select:
 
-Update yt-dlp: pip install --upgrade yt-dlp
+```text
+2. MP3
+```
 
-Audio/Video quality issues
-Some videos may not have high-quality options available
+The downloader extracts the audio and converts it to MP3.
 
-YouTube may restrict download quality for certain content
+Default audio quality:
 
-📝 Dependencies
-yt-dlp - YouTube downloading library
+```text
+🎚️ 192 kbps
+```
 
-FFmpeg - Media processing tool
+Example:
 
-🔒 Legal Notice
-Please respect copyright laws and YouTube's Terms of Service.
+```text
+📁 My Awesome Video.mp3
+```
 
-Only download content you have permission to download
+---
 
-Use this tool responsibly
+## 📁 Output Structure
 
-The developer is not responsible for any misuse
+Downloaded files are stored in your current directory:
 
-🤝 Contributing
-Feel free to fork this repository and submit pull requests for improvements.
+```text
+📂 youtube-downloader/
+│
+├── 🐍 youtube_downloader.py
+│
+├── 🎥 Video Title.mp4
+├── 🎵 Music Title.mp3
+│
+└── 📄 README.md
+```
 
-📄 License
-This project is open source and available under the MIT License.
+---
 
-📞 Support
-For issues, please open an issue on GitHub or check the yt-dlp documentation.
+## ⚙️ Configuration
 
-Happy Downloading! 🎵📹
+### 🎥 MP4
+
+The MP4 option is configured to:
+
+```text
+Best Video
+     +
+Best Audio
+     ↓
+  FFmpeg
+     ↓
+  MP4 File
+```
+
+This allows the downloader to obtain the highest-quality streams available and combine them into one file.
+
+### 🎵 MP3
+
+The MP3 option:
+
+```text
+YouTube Audio
+      ↓
+   FFmpeg
+      ↓
+  MP3 192 kbps
+```
+
+---
+
+## 🛑 Exit Commands
+
+You can quit the program using:
+
+```text
+exit
+clear
+stop
+ok
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### ❌ `FFmpeg not found`
+
+Make sure FFmpeg is installed correctly.
+
+Check:
+
+```bash
+ffmpeg -version
+```
+
+If the command isn't recognized, add FFmpeg's `bin` folder to your system `PATH`.
+
+---
+
+### ❌ Download Failed
+
+Try the following:
+
+```bash
+pip install --upgrade yt-dlp
+```
+
+Then verify:
+
+* 🌐 Your internet connection
+* 🔗 The YouTube URL
+* 📦 yt-dlp installation
+* 🔧 FFmpeg installation
+
+---
+
+### ❌ Poor Audio / Video Quality
+
+Quality depends on what streams are available for the specific video.
+
+Some videos may not provide higher-quality streams.
+
+---
+
+### ❌ Region Restricted Video
+
+Some YouTube content may be unavailable in your region.
+
+In such cases, the downloader may not be able to access the video.
+
+---
+
+## 📦 Dependencies
+
+### 🐍 Python
+
+The application is written in Python.
+
+### 📥 yt-dlp
+
+Handles video/audio downloading and stream selection.
+
+### 🔧 FFmpeg
+
+Used for:
+
+* Video + audio merging
+* Audio extraction
+* Format conversion
+
+---
+
+## 🔐 Legal & Responsible Use
+
+> ⚠️ **Important:** Please use this project responsibly.
+
+Only download content when you have the necessary rights or permission to do so.
+
+You are responsible for complying with:
+
+* ©️ Copyright laws
+* 📜 YouTube's Terms of Service
+* 🌍 Applicable local laws and regulations
+
+The developer is **not responsible for misuse** of this software.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! ❤️
+
+If you have an idea or improvement:
+
+1. 🍴 Fork the repository
+2. 🌿 Create a new branch
+3. ✨ Make your changes
+4. 💾 Commit your changes
+5. 🚀 Open a Pull Request
+
+Example:
+
+```bash
+git checkout -b feature/my-new-feature
+git commit -m "Add new feature"
+git push origin feature/my-new-feature
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+You are free to use, modify, and distribute the project according to the license terms.
+
+---
+
+## 💬 Support
+
+Found a bug or have a suggestion?
+
+🐛 Open an issue on GitHub.
+
+📚 For yt-dlp related problems, check the official yt-dlp documentation.
+
+---
+
+## ⭐ Show Your Support
+
+If this project helped you, consider giving it a ⭐ on GitHub!
+
+It really helps support the project. ❤️
+
+```text
+╔══════════════════════════════════════════╗
+║                                          ║
+║       🎬 Happy Downloading! 🎵           ║
+║                                          ║
+║          Made with ❤️ & Python 🐍        ║
+║                                          ║
+╚══════════════════════════════════════════╝
+```
+
+<p align="center">
+  <b>⭐ Star the repository if you like it!</b>
+</p>
