@@ -21,15 +21,15 @@
 
 ## ✨ Features
 
-| Feature               | Description                                                  |
-| --------------------- | ------------------------------------------------------------ |
+| Feature                | Description                                                  |
+| ---------------------  | ------------------------------------------------------------ |
 | 🎥 **MP4 Download**   | Download YouTube videos with the best available quality      |
 | 🎵 **MP3 Extraction** | Extract audio and save it as a high-quality MP3              |
-| ⚡ **Best Quality**    | Automatically selects the best available video/audio streams |
+| ⚡ **Best Quality**   | Automatically selects the best available video/audio streams |
 | 🔀 **Auto Merge**     | Automatically merges video and audio using FFmpeg            |
-| 🖥️ **Simple CLI**    | Clean and beginner-friendly command-line interface           |
+| 🖥️ **Simple CLI**     | Clean and beginner-friendly command-line interface           |
 | 📁 **Auto Naming**    | Files are automatically saved using the video title          |
-| 🛠️ **Easy Setup**    | Minimal dependencies and straightforward installation        |
+| 🛠️ **Easy Setup**     | Minimal dependencies and straightforward installation        |
 
 ---
 
@@ -130,7 +130,7 @@ pip install --upgrade yt-dlp
 Clone or download this project and run:
 
 ```bash
-python youtube_downloader.py
+python main.py
 ```
 
 You'll see a simple menu:
@@ -406,9 +406,9 @@ It really helps support the project. ❤️
 ```text
 ╔══════════════════════════════════════════╗
 ║                                          ║
-║       🎬 Happy Downloading! 🎵           ║
+║       🎬 Happy Downloading! 🎵          ║
 ║                                          ║
-║          Made with ❤️ & Python 🐍        ║
+║          Made with ❤️ & Python 🐍       ║
 ║                                          ║
 ╚══════════════════════════════════════════╝
 ```
