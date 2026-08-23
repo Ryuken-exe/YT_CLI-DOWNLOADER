@@ -217,7 +217,7 @@ Downloaded files are stored in your current directory:
 ```text
 📂 youtube-downloader/
 │
-├── 🐍 youtube_downloader.py
+├── 🐍 main.py
 │
 ├── 🎥 Video Title.mp4
 ├── 🎵 Music Title.mp3
